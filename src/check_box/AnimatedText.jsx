@@ -13,7 +13,7 @@ const AnimatedText = () => {
 
     return (
         <div className="container">
-            <div className="text-container" style={{width: '20%'}}>
+            <div className="text-container" style={{width: '20%', marginLeft: '10vw'}}>
                 {[...Array(7)].map((_, i) => (
                     <span key={i} className={`text ${i === 0 ? '' : ''}`}>
                 BAZAAR
