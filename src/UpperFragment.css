@@ -1,0 +1,33 @@
+.fragment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    gap: 1vw;
+    align-items: stretch;
+
+}
+
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    width: 100vw;
+    margin-top: 8vw;
+    left: 0;
+    align-items: center;
+
+    border:solid 1px orange;
+}
+
+.vizitka-container {
+    width: 80vw;
+
+    height: 10vw;
+    border: 1px dashed red;
+}
+
