@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './UpperFragment.css'
 import Background from "./check_box/Background.jsx";
 import Logo from "./check_box/Logo.jsx";
+import SwitchBox from "./check_box/SwitchBox.jsx";
 
 
 function UpperFragment() {
@@ -17,7 +18,11 @@ function UpperFragment() {
             <div className="vizitka-container">
                 Тут берется визитка
             </div>
+            <div className="switch-container">
+                <SwitchBox/>
+            </div>
         </div>
+
 
 
 
