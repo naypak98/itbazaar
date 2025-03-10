@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);
 
+
 .heading {
-    font-size: 36px;
+    font-size: 2vw;
 }
 html {
     background: #29ce9a;
@@ -19,34 +20,53 @@ body {
 
 .demo {
     display: inline-block;
-    padding: 50px;
-    /*background-color: #333333;*/
-    border-radius: 20px;
-    color: #666;
+    padding: 5vw;
+    color: #f8f8f8;
     text-align: center;
+    border:solid 1px #000000;
+    background-image: url('src/jpegs/oldCarpet.jpg');
+    background-size: 150vw 150vh; /* Фиксированный размер изображения */
+    background-repeat: no-repeat; /* Чтобы картинка не повторялась */
+    background-position: center; /* Центрирование изображения */
+    border-radius: 30% 15% 45% 20% / 50% 40% 15% 45%; /* Закругленные углы с разными радиусами */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+.demo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Прозрачный чёрный фон, можно настроить opacity */
+    z-index: -1; /* Размещение слоя ниже контента */
 }
 
+
+
 .demo__content {
-    text-align: left;
-    display: inline-block;
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в столбик */
+    gap: 15px; /* Отступ между чекбоксами */
 }
 
 .demo__title {
-    font-size: 50px;
+    font-size: 3vw;
     font-weight: bold;
     text-transform: uppercase;
-    padding-bottom: 30px;
+    padding-bottom: 2vw;
 }
 
 .switcher {
     position: relative;
     display: inline-block;
     cursor: pointer;
-    padding-left: 100px;
-    height: 40px;
-    line-height: 40px;
-    margin: 5px;
-    font-size: 30px;
+    padding-left: 7vw;
+    height: 3vw;
+    line-height: 3vw;
+    margin: 0.5vw;
+    font-size: 2vw;
     user-select: none;
 
     input {
@@ -54,14 +74,20 @@ body {
     }
 }
 
+/* Это для текста рядом с переключателем */
+.switcher span {
+    font-size: 2vw;  /* Устанавливаем размер шрифта для текста рядом со свитчерами */
+}
+
 .switcher__indicator {
     &::after {
         content: '';
         position: absolute;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
         left: 0;
-        height: 40px;
-        width: 40px;
+        height: 3vw;
+        width: 3vw;
         background-color: #d5d5d5;
         border-radius: 50%;
         transition: all .3s ease;
@@ -72,24 +98,25 @@ body {
     &::before {
         content: '';
         position: absolute;
-        top: 16px;
+        top: 50%;
+        transform: translateY(-50%);
         left: 0;
-        width: 80px;
-        height: 8px;
-        background-color: #d5d5d5;
-        border-radius: 10px;
+        width: 6vw;
+        height: 90%;
+        background-color: #b56c6c;
+        border-radius: 1vw;
         transition: all .3s ease;
     }
 
     input:checked + &::after {
-        background-color: #29ce9a;
-        transform: translateX(40px);
+        background-color: #1c7046;
+        transform: translate(4vw, -50%);
         animation-name: pulseout;
         animation-duration: .3s;
     }
 
     input:checked + &::before {
-        background-color: #29ce9a;
+        background-color: #1e8868;
     }
 
     input:disabled + &::after,
@@ -100,26 +127,22 @@ body {
 
 @keyframes pulsein {
     0%, 100% {
-        top: 0px;
-        height: 40px;
-        width: 40px;
+        height: 3vw;
+        width: 3vw;
     }
     50% {
-        top: 6px;
-        height: 28px;
-        width: 52px;
+        height: 2.5vw;
+        width: 3.5vw;
     }
 }
 
 @keyframes pulseout {
     0%, 100% {
-        top: 0px;
-        height: 40px;
-        width: 40px;
+        height: 3vw;
+        width: 3vw;
     }
     50% {
-        top: 6px;
-        height: 28px;
-        width: 52px;
+        height: 2.5vw;
+        width: 3.5vw;
     }
 }
