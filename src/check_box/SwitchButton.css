@@ -1,12 +1,21 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);
+/*@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);*/
 
+
+@font-face {
+    font-family: 'Overdozesans';  /* Имя шрифта, которым будете пользоваться в CSS */
+    src: url('src/fonts/overdozesans.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .heading {
-    font-size: 2vw;
+    font-size: 3vw;
+    text-shadow:
+            -0.15vw -0.15vh 0 black;
+
 }
 html {
     background: #29ce9a;
-    font-family: Raleway;
     display: table;
     width: 100%;
     height: 100%;
@@ -21,15 +30,20 @@ body {
 .demo {
     display: inline-block;
     padding: 5vw;
-    color: #f8f8f8;
+    color: #ffffff;
+    font-size: 2vw;
     text-align: center;
-    border:solid 1px #000000;
-    background-image: url('src/jpegs/oldCarpet.jpg');
-    background-size: 150vw 150vh; /* Фиксированный размер изображения */
+    /*border:solid 10px #da5f5f;*/
+    background-image: url('src/jpegs/starii kover kusok.png');
+    background-size: 120vw 105vh; /* Фиксированный размер изображения */
     background-repeat: no-repeat; /* Чтобы картинка не повторялась */
     background-position: center; /* Центрирование изображения */
     border-radius: 30% 15% 45% 20% / 50% 40% 15% 45%; /* Закругленные углы с разными радиусами */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Overdozesans", cursive;
+    transform: scale(1.2); /* Масштабирование на 120% */
+    transform-origin: center; /* Центрирование масштабирования */
+
 
 }
 
@@ -39,6 +53,7 @@ body {
     display: flex;
     flex-direction: column; /* Располагаем элементы в столбик */
     gap: 15px; /* Отступ между чекбоксами */
+
 }
 
 .demo__title {
@@ -46,18 +61,23 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 2vw;
+
+
 }
 
 .switcher {
     position: relative;
-    display: inline-block;
+    display: table;
     cursor: pointer;
     padding-left: 7vw;
     height: 3vw;
     line-height: 3vw;
     margin: 0.5vw;
-    font-size: 2vw;
+    font-size: 3vw;
+    font-family: "Overdozesans", serif;
     user-select: none;
+    text-shadow:
+            -0.17vw -0.15vh 0 black;
 
     input {
         display: none;
@@ -83,6 +103,7 @@ body {
         transition: all .3s ease;
         animation-name: pulsein;
         animation-duration: .3s;
+        border:solid 1px #f4f2ee;
     }
 
     &::before {
@@ -93,20 +114,21 @@ body {
         left: 0;
         width: 6vw;
         height: 90%;
-        background-color: #b56c6c;
+        background-color: #bd9797;
         border-radius: 1vw;
         transition: all .3s ease;
+        border:solid 1px #aea598;
     }
 
     input:checked + &::after {
-        background-color: #1c7046;
+        background-color: #5e836b;
         transform: translate(4vw, -50%);
         animation-name: pulseout;
         animation-duration: .3s;
     }
 
     input:checked + &::before {
-        background-color: #1e8868;
+        background-color: #457869;
     }
 
     input:disabled + &::after,
