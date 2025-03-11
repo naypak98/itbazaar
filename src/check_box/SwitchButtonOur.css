@@ -1,0 +1,160 @@
+/*@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);*/
+
+
+@font-face {
+    font-family: 'Riviera';  /* Имя шрифта, которым будете пользоваться в CSS */
+    src: url('src/fonts/Riviera.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.our-heading {
+    font-size: 3vw;
+    text-shadow:
+            -0.15vw -0.15vh 0 black;
+
+}
+html {
+    background: #29ce9a;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.our-demo {
+    display: inline-block;
+    padding: 5vw;
+    color: #ffffff;
+    font-size: 2vw;
+    text-align: center;
+    /*border:solid 10px #da5f5f;*/
+    background-image: url('src/jpegs/futurist-texture-wallpaper-cut (1).png');
+    background-size: 30vw 30vh; /* Фиксированный размер изображения */
+    background-repeat: no-repeat; /* Чтобы картинка не повторялась */
+    background-position: center; /* Центрирование изображения */
+    border-radius: 80% 30% 15% 45% /20% 25% 35% 20% ; /* Закругленные углы с разными радиусами */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Riviera", cursive;
+    transform: scale(1.4); /* Масштабирование на 120% */
+    transform-origin: center; /* Центрирование масштабирования */
+
+
+}
+
+
+
+.our-demo__content {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в столбик */
+    gap: 15px; /* Отступ между чекбоксами */
+
+}
+
+.our-demo__title {
+    font-size: 3vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 2vw;
+
+
+}
+
+.our-switcher {
+    position: relative;
+    display: table;
+    cursor: pointer;
+    padding-left: 7vw;
+    height: 3vw;
+    line-height: 3vw;
+    margin: 0.5vw;
+    font-size: 3vw;
+    font-family: "Riviera", serif;
+    user-select: none;
+    text-shadow:
+            -0.17vw -0.15vh 0 black;
+
+    input {
+        display: none;
+    }
+}
+
+/* Это для текста рядом с переключателем */
+.our-switcher span {
+    font-size: 2vw;  /* Устанавливаем размер шрифта для текста рядом со свитчерами */
+}
+
+.our-switcher__indicator {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        height: 3vw;
+        width: 3vw;
+        background-color: #d5d5d5;
+        border-radius: 50%;
+        transition: all .3s ease;
+        animation-name: pulsein;
+        animation-duration: .3s;
+        border:solid 1px #f4f2ee;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 6vw;
+        height: 90%;
+        background-color: #bd9797;
+        border-radius: 1vw;
+        transition: all .3s ease;
+        border:solid 1px #aea598;
+    }
+
+    input:checked + &::after {
+        background-color: #5e836b;
+        transform: translate(4vw, -50%);
+        animation-name: pulseout;
+        animation-duration: .3s;
+    }
+
+    input:checked + &::before {
+        background-color: #457869;
+    }
+
+    input:disabled + &::after,
+    input:disabled + &::before {
+        background-color: #e5e5e5;
+    }
+}
+
+@keyframes pulsein {
+    0%, 100% {
+        height: 3vw;
+        width: 3vw;
+    }
+    50% {
+        height: 2.5vw;
+        width: 3.5vw;
+    }
+}
+
+@keyframes pulseout {
+    0%, 100% {
+        height: 3vw;
+        width: 3vw;
+    }
+    50% {
+        height: 2.5vw;
+        width: 3.5vw;
+    }
+}
