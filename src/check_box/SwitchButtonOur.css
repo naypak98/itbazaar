@@ -1,12 +1,12 @@
 /*@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);*/
 
 
-@font-face {
-    font-family: 'Riviera';  /* Имя шрифта, которым будете пользоваться в CSS */
-    src: url('src/fonts/Riviera.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+/*@font-face {*/
+/*    font-family: 'Riviera';  !* Имя шрифта, которым будете пользоваться в CSS *!*/
+/*    src: url('src/fonts/Riviera.otf') format('opentype');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
 
 .our-heading {
     font-size: 3vw;
@@ -35,13 +35,13 @@ body {
     text-align: center;
     /*border:solid 10px #da5f5f;*/
     background-image: url('src/jpegs/futurist-texture-wallpaper-cut (1).png');
-    background-size: 40vw 40vh; /* Фиксированный размер изображения */
+    background-size: 44vw 44vh; /* Фиксированный размер изображения */
     background-repeat: no-repeat; /* Чтобы картинка не повторялась */
     background-position: center; /* Центрирование изображения */
     border-radius: 30% 30% 15% 45% /30% 25% 35% 10% ; /* Закругленные углы с разными радиусами */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: "Riviera", cursive;
-    transform: scale(1.4); /* Масштабирование на 120% */
+    font-family: "JetBrains Mono", monospace;
+    transform: scale(0.8); /* Масштабирование  */
     transform-origin: center; /* Центрирование масштабирования */
 
 
@@ -74,7 +74,7 @@ body {
     line-height: 3vw;
     margin: 0.5vw;
     font-size: 3vw;
-    font-family: "Riviera", serif;
+    font-family: "JetBrains Mono", monospace;
     user-select: none;
     text-shadow:
             -0.17vw -0.15vh 0 black;
@@ -103,7 +103,8 @@ body {
         transition: all .3s ease;
         animation-name: pulsein;
         animation-duration: .3s;
-        border:solid 1px #f4f2ee;
+        border:solid 0.1vw #f4f2ee;
+        box-shadow: inset 0 0 0.7vw #70aeba;
     }
 
     &::before {
@@ -114,26 +115,27 @@ body {
         left: 0;
         width: 6vw;
         height: 100%;
-        background-color: #bd9797;
+        /*background-color: #776565;*/
         border-radius: 1vw;
         transition: all .3s ease;
-        border:solid 1px #aea598;
+        border:solid 0.1vw #ecdcdc;
+        box-shadow: inset 0 0 0.7vw #70aeba;
     }
 
     input:checked + &::after {
-        background-color: #5e836b;
+        background-color: #600571;
         transform: translate(3vw, -50%);
         animation-name: pulseout;
         animation-duration: .3s;
     }
 
     input:checked + &::before {
-        background-color: #457869;
+        background-color: #83318c;
     }
 
     input:disabled + &::after,
     input:disabled + &::before {
-        background-color: #e5e5e5;
+        background-color: #ecdcdc;
     }
 }
 

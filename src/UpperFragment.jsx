@@ -3,6 +3,7 @@ import './UpperFragment.css'
 import Background from "./check_box/Background.jsx";
 import Logo from "./check_box/Logo.jsx";
 import SwitchBox from "./check_box/SwitchBox.jsx";
+import Portfolio from "./portfolio/Portfolio.jsx";
 
 
 function UpperFragment() {
@@ -21,7 +22,13 @@ function UpperFragment() {
             <div className="switch-container">
                 <SwitchBox/>
             </div>
+            <div className="portfolio-container">
+                <Portfolio/>
+            </div>
+
         </div>
+
+
 
 
 

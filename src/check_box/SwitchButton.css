@@ -1,12 +1,12 @@
 /*@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);*/
 
 
-@font-face {
-    font-family: 'Riviera';  /* Имя шрифта, которым будете пользоваться в CSS */
-    src: url('src/fonts/Riviera.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+/*@font-face {*/
+/*    font-family: 'Riviera';  !* Имя шрифта, которым будете пользоваться в CSS *!*/
+/*    src: url('src/fonts/Riviera.otf') format('opentype');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
 
 .heading {
     font-size: 3vw;
@@ -40,8 +40,9 @@ body {
     background-position: center; /* Центрирование изображения */
     border-radius: 30% 15% 45% 20% / 50% 40% 15% 45%; /* Закругленные углы с разными радиусами */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: "Riviera", cursive;
-    transform: scale(1.1); /* Масштабирование на 120% */
+    font-family: "Montserrat", sans-serif;
+
+    transform: scale(0.8); /* Масштабирование  */
     transform-origin: center; /* Центрирование масштабирования */
 
 
@@ -74,7 +75,7 @@ body {
     line-height: 3vw;
     margin: 0.5vw;
     font-size: 3vw;
-    font-family: "Riviera", serif;
+    font-family: "Montserrat", sans-serif;
     user-select: none;
     text-shadow:
             -0.17vw -0.15vh 0 black;
