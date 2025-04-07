@@ -1,0 +1,38 @@
+name: site-deployment
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout code
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Set up Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    # Install dependencies, add missing Babel plugin, and build React project
+    - name: Install dependencies and build React project
+      run: |
+        npm install
+        npm install @babel/plugin-proposal-private-property-in-object --save-dev
+        CI='' npm run build
+    # Set up SSH key and set permissions
+    - name: Set up SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/xray && chmod 600 ~/.ssh/xray
+    # Deploy React build folder
+    - name: Deploy React build folder with SCP
+      run: |
+        scp -o StrictHostKeyChecking=no -i ~/.ssh/xray -r ./dist/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/itbazaar
